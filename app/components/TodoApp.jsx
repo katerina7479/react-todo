@@ -26,16 +26,19 @@ var TodoApp = React.createClass({
       ]
     }
   },
+  handleAddTodo: function (text) {
+    alert('New Todo: ' + text);
+  },
   render: function () {
     var { todos } = this.state;
     return (
       <div className="row">
         <div className="columns large-6 medium-4 small-centered align-center">
-            <h2>TodoApp</h2>
+            <h2>Todo App</h2>
               <div>
                 <Search />
                 <TodoList todos={todos}/>
-                <Controls />
+                <Controls onAdd={this.handleAddTodo}/>
               </div>
           </div>
       </div>
