@@ -1,5 +1,6 @@
 var webpackConfig = require('./webpack.config.js');
 
+
 module.exports = function (config) {
   config.set({
     browsers: ['Chrome'],
@@ -11,7 +12,10 @@ module.exports = function (config) {
       'node_modules/foundation-sites/dist/foundation.min.js',
     ],
     preprocessors: {
-      'app/tests/**/*.test.jsx': ['webpack', 'sourcemap']
+      'app/tests/**/*.test.jsx': [
+        'webpack',
+        'sourcemap',
+      ]
     },
     reporters: ['mocha'],
     client: {
@@ -22,6 +26,6 @@ module.exports = function (config) {
     webpack: webpackConfig,
     webpackServer: {
       noInfo: true
-    }
+    },
   });
 };

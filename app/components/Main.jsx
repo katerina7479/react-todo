@@ -8,7 +8,7 @@ var Main = (props) => {
           <Navigation />
           <h2>Main</h2>
           {props.children}
-        </div>
+    </div>
   );
 };
 

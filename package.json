@@ -3,16 +3,14 @@
   "version": "1.0.0",
   "description": "React boilerplate app",
   "main": "index.js",
-  "scripts":
-  {
+  "scripts": {
     "test": "karma start",
     "heroku-postbuild": "webpack -p --config ./webpack.config.js --progress",
-    "start": "node server.js"
+    "start": "node server.js",
   },
   "author": "Katerina Hanson",
   "license": "MIT",
-  "dependencies":
-  {
+  "dependencies": {
     "axios": "^0.16.2",
     "babel-core": "^6.5.1",
     "babel-loader": "^6.2.2",
@@ -32,10 +30,9 @@
     "sass-loader": "^6.0.6",
     "script-loader": "^0.6.1",
     "style-loader": "^0.13.0",
-    "webpack": "^1.12.13"
+    "webpack": "^1.12.13",
   },
-  "devDependencies":
-  {
+  "devDependencies": {
     "expect": "^1.14.0",
     "karma": "^0.13.22",
     "karma-chrome-launcher": "^0.2.2",
@@ -44,6 +41,6 @@
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^1.7.0",
     "mocha": "^2.4.5",
-    "react-addons-test-utils": "^0.14.7"
-  }
+    "react-addons-test-utils": "^0.14.7",
+  },
 }
