@@ -27,7 +27,15 @@ var TodoApp = React.createClass({
     }
   },
   handleAddTodo: function (text) {
-    alert('New Todo: ' + text);
+    var newTodos = this.state.todos;
+    var newId = newTodos[newTodos.length - 1].id + 1;
+    newTodos.push({
+      id: newId,
+      text: text
+    })
+    this.setState({
+      todos: newTodos
+    })
   },
   render: function () {
     var { todos } = this.state;
@@ -38,7 +46,7 @@ var TodoApp = React.createClass({
               <div>
                 <Search />
                 <TodoList todos={todos}/>
-                <Controls onAdd={this.handleAddTodo}/>
+                <Controls onAddTodo={this.handleAddTodo}/>
               </div>
           </div>
       </div>
