@@ -6,7 +6,7 @@ init: clean
 clean:
 	rm -rf node-modules
 
-test: init
+test:
 	npm test
 
 watch:
