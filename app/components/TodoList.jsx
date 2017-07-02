@@ -8,10 +8,20 @@ var TodoList = React.createClass({
 
     };
   },
+
+
   render: function () {
+    var { todos } = this.props;
+    var renderTodos = () => {
+      return todos.map((todo) => {
+        return (
+          <Todo key={todo.id} {... todo} />
+        )
+      });
+    };
     return (
       <div>
-        <h1>TodoList</h1>
+        {renderTodos()}
       </div>
     );
   }

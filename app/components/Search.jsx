@@ -8,7 +8,7 @@ var Search = React.createClass({
         <input type="seach" className="search expanded" placeholder="Search Todo"/>
         <div>
           <input type="checkbox" id="completed"/>
-          <label for="completed">Show Completed</label>
+          <label htmlFor="completed">Show Completed</label>
         </div>
       </div>
     );
