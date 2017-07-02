@@ -34,12 +34,12 @@ module.exports = {
   resolve: {
     root: __dirname,
     alias: {
-      Main: 'app/components/Main.jsx',
       applicationStyle: 'app/styles/app.scss',
-      Navigation: 'app/components/Navigation.jsx',
-      PageOne: 'app/components/PageOne.jsx',
-      PageTwo: 'app/components/PageTwo.jsx',
     },
+    modulesDirectories: [
+      'node_modules',
+      './app/components',
+    ],
     extensions: ['', '.js', '.jsx'],
   },
   module: {
