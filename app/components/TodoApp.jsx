@@ -2,26 +2,31 @@ var React = require('react');
 var TodoList = require('TodoList');
 var Search = require('Search');
 var Controls = require('Controls');
-
+var uuid = require('node-uuid');
 
 var TodoApp = React.createClass({
   getInitialState: function () {
     return {
       todos: [{
-          id: 1,
-          text: "Walk the dog"
+          id: uuid(),
+          text: "Walk the dog",
+          completed: false
         },
         {
-          id: 2,
-          text: "Mow the yard"
+          id: uuid(),
+          text: "Mow the yard",
+          completed: false
+
         },
         {
-          id: 3,
-          text: 'Get mail'
+          id: uuid(),
+          text: 'Get mail',
+          completed: true
         },
         {
-          id: 4,
-          text: 'Watch TV'
+          id: uuid(),
+          text: 'Watch TV',
+          completed: true
         }
       ],
       showCompleted: false,
@@ -30,14 +35,26 @@ var TodoApp = React.createClass({
   },
   handleAddTodo: function (text) {
     var newTodos = this.state.todos;
-    var newId = newTodos[newTodos.length - 1].id + 1;
-    newTodos.push({
-      id: newId,
-      text: text
-    })
     this.setState({
-      todos: newTodos
+      todos: [...this.state.todos,
+        {
+          id: uuid(),
+          text: text,
+          completed: false
+        }
+      ]
     })
+  },
+  handleToggle: function (id) {
+    var updatedTodos = this.state.todos.map((todo) => {
+      if (id === todo.id) {
+        todo.completed = !todo.completed;
+      }
+      return todo
+    });
+    this.setState({
+      todos: updatedTodos,
+    });
   },
   handleSearch: function (showCompleted, searchText) {
     this.setState({
@@ -53,7 +70,7 @@ var TodoApp = React.createClass({
             <h2>Todo App</h2>
               <div>
                 <Search onSearch={this.handleSearch}/>
-                <TodoList todos={todos}/>
+                <TodoList todos={todos} onToggle={this.handleToggle}/>
                 <Controls onAddTodo={this.handleAddTodo}/>
               </div>
           </div>
