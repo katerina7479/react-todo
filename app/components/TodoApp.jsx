@@ -23,8 +23,10 @@ var TodoApp = React.createClass({
           id: 4,
           text: 'Watch TV'
         }
-      ]
-    }
+      ],
+      showCompleted: false,
+      searchText: '',
+    };
   },
   handleAddTodo: function (text) {
     var newTodos = this.state.todos;
@@ -37,6 +39,12 @@ var TodoApp = React.createClass({
       todos: newTodos
     })
   },
+  handleSearch: function (showCompleted, searchText) {
+    this.setState({
+      showCompleted: showCompleted,
+      searchText: searchText.toLowerCase(),
+    })
+  },
   render: function () {
     var { todos } = this.state;
     return (
@@ -44,7 +52,7 @@ var TodoApp = React.createClass({
         <div className="columns large-6 medium-4 small-centered align-center">
             <h2>Todo App</h2>
               <div>
-                <Search />
+                <Search onSearch={this.handleSearch}/>
                 <TodoList todos={todos}/>
                 <Controls onAddTodo={this.handleAddTodo}/>
               </div>

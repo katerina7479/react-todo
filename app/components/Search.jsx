@@ -1,14 +1,28 @@
 var React = require('react')
 
 var Search = React.createClass({
-
+  handleSearch: function () {
+    var showCompleted = this.refs.shoCompleted.checked;
+    var searchText = this.refs.searchText.value;
+    this.props.onSearch(showCompleted, searchText);
+  },
   render: function () {
     return (
       <div>
-        <input type="seach" className="search expanded" placeholder="Search Todo"/>
         <div>
-          <input type="checkbox" id="completed"/>
-          <label htmlFor="completed">Show Completed</label>
+          <input
+            type="seach"
+            ref="searchText"
+            className="search expanded"
+            placeholder="Search Todo"
+            onChange={this.handleSearch}
+          />
+        </div>
+        <div>
+          <label htmlFor="completed">
+            <input type="checkbox" ref="shoCompleted"/>
+            Show Completed
+          </label>
         </div>
       </div>
     );
