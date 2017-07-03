@@ -19,10 +19,8 @@ var Todo = React.createClass({
         <input id="{id}" type="checkbox" checked={completed} />
         <div>
           <p>{text}</p>
-        </div>
-        <div>
-        <p className="todo_subtext">Created: {renderDate(createdAt)}</p>
-        {renderCompleted()}
+          <p className="todo_subtext">Created: {renderDate(createdAt)}</p>
+          {renderCompleted()}
         </div>
       </div>
     );
