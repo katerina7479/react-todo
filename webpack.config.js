@@ -39,6 +39,7 @@ module.exports = {
     modulesDirectories: [
       'node_modules',
       './app/components',
+      './api/',
     ],
     extensions: ['', '.js', '.jsx'],
   },
