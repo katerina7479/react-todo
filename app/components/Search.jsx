@@ -2,7 +2,7 @@ var React = require('react')
 
 var Search = React.createClass({
   handleSearch: function () {
-    var showCompleted = this.refs.shoCompleted.checked;
+    var showCompleted = this.refs.showCompleted.checked;
     var searchText = this.refs.searchText.value;
     this.props.onSearch(showCompleted, searchText);
   },
@@ -18,9 +18,9 @@ var Search = React.createClass({
             onChange={this.handleSearch}
           />
         </div>
-        <div>
+        <div onChange={this.handleSearch}>
           <label htmlFor="completed">
-            <input type="checkbox" ref="shoCompleted"/>
+            <input type="checkbox" ref="showCompleted"/>
             Show Completed
           </label>
         </div>
