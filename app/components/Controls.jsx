@@ -14,7 +14,7 @@ var Controls = React.createClass({
   },
   render: function () {
     return (
-      <div>
+      <div className="container_footer">
         <form onSubmit={this.onSubmit}>
           <input type="text" ref="todoText" placeholder="Add Todo" />
           <button type="submit" className="button expanded">Submit</button>

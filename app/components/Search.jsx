@@ -8,10 +8,10 @@ var Search = React.createClass({
   },
   render: function () {
     return (
-      <div>
+      <div className="container_header">
         <div>
           <input
-            type="seach"
+            type="search"
             ref="searchText"
             className="search expanded"
             placeholder="Search Todo"
