@@ -26,11 +26,8 @@ module.exports = {
     })
     // filter by search
     filteredTodos = filteredTodos.filter((todo) => {
-      if (searchText.length == 0) {
-        return true
-      } else if (todo.text.toLowerCase().includes(searchText)) {
-        return true
-      } else { return false }
+      var text = todo.text.toLowerCase();
+      return searchText.length === 0 || text.includes(searchText);
     })
 
     // sort
