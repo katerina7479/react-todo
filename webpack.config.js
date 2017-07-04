@@ -4,7 +4,6 @@ if (process.env.NODE_ENV == 'dev') {
   require('dotenv').config();
 }
 
-
 //Plugins
 var env_plugin = new webpack.DefinePlugin({
   'process.env': {
@@ -16,7 +15,6 @@ var provide_plugin = new webpack.ProvidePlugin({
   '$': 'jquery',
   'jQuery': 'jquery'
 });
-
 
 module.exports = {
   entry: [
