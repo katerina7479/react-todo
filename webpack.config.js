@@ -33,6 +33,8 @@ module.exports = {
     root: __dirname,
     alias: {
       applicationStyle: 'app/styles/app.scss',
+      Actions: 'app/actions/actions.jsx',
+      Reducers: 'app/reducers/reducers.jsx',
     },
     modulesDirectories: [
       'node_modules',
