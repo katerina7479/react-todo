@@ -1,13 +1,17 @@
-var React = require('react')
+var React = require('react');
+var { connect } = require('react-redux');
+var actions = require('Actions');
 
-var Controls = React.createClass({
+
+export var Controls = React.createClass({
   onSubmit: function (event) {
+    var { dispatch } = this.props;
     event.preventDefault();
     var text = this.refs.todoText.value;
 
     if (text.length > 0) {
       this.refs.todoText.value = null;
-      this.props.onAddTodo(text);
+      dispatch(actions.addTodo(text))
     } else {
       this.refs.todoText.focus();
     }
@@ -24,4 +28,4 @@ var Controls = React.createClass({
   }
 });
 
-module.exports = Controls;
+export default connect()(Controls);
