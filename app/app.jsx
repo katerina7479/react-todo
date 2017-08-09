@@ -5,10 +5,17 @@ var { Provider } = require('react-redux');
 
 var actions = require('Actions');
 var store = require('configureStore').configure();
+var TodoAPI = require('TodoAPI');
 
 store.subscribe(() => {
-  console.log('New State', store.getState());
-})
+  var state = store.getState()
+  console.log('New State', state);
+  TodoAPI.setTodos(state.todos);
+});
+
+//dispatch existing items
+var initialTodos = TodoAPI.getTodos();
+store.dispatch(actions.addTodos(initialTodos));
 
 // Load foundation
 $(document).foundation();

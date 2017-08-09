@@ -4,7 +4,6 @@ var actions = require('Actions');
 
 
 export var Search = React.createClass({
-
   render: function () {
     var { dispatch, showCompleted, searchText } = this.props;
     return (

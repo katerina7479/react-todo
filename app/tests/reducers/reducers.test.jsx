@@ -47,8 +47,22 @@ describe('Reducers', () => {
       expect(res.length).toEqual(2);
       expect(res[1].text).toEqual("Water Plants");
       expect(res[1].completed).toEqual(true);
-
+    });
+    it('should add bulk TODOS', () => {
+      var todos = [{
+        id: 11,
+        text: 'ANYTHING',
+        completed: false,
+        completedAt: undefined,
+        createdAt: 500
+      }];
+      var action = {
+        type: 'ADD_TODOS',
+        todos
+      };
+      var res = reducers.todosReducer(df([]), df(action));
+      expect(res.length).toEqual(1);
+      expect(res[0]).toEqual(todos[0]);
     });
   });
-
 });
