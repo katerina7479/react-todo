@@ -35,6 +35,7 @@ module.exports = {
       applicationStyle: 'app/styles/app.scss',
       Actions: 'app/actions/actions.jsx',
       Reducers: 'app/reducers/reducers.jsx',
+      configureStore: 'app/store/configureStore.jsx',
     },
     modulesDirectories: [
       'node_modules',
