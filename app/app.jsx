@@ -10,10 +10,6 @@ store.subscribe(() => {
   console.log('New State', store.getState());
 })
 
-store.dispatch(actions.addTodo('Test my react app'));
-store.dispatch(actions.setSearchText('app'));
-store.dispatch(actions.toggleShowCompleted());
-
 // Load foundation
 $(document).foundation();
 
